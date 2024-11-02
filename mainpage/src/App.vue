@@ -1,17 +1,6 @@
 <template>
     <div>
         <el-card class="box-card">
-            <div class="header">
-                <a href="https://github.com/SubConv/SubConv">
-                <span>
-                    SubConv
-                </span>
-                <span>
-                    <i class="fa-brands fa-github"></i>
-                </span>
-                </a>
-            </div>
-
             <el-form label-position="right" label-width="100px" class="main">
                 <el-form-item label="订阅">
                     <el-input type="textarea" v-model="linkInput" rows="5" resize="none"
@@ -30,39 +19,17 @@
 
                 <el-form-item label="更新间隔">
                     <el-input v-model="time" style="width: 100px" placeholder=""></el-input>
-                    秒，默认为1800
+                    Time，默认为1800
                 </el-form-item>
-                <el-form-item label="新订阅链接">
+                <el-form-item label="NEW URL">
                     <el-input type="textarea" v-model="linkOutput" rows="2" resize="none"></el-input>
                 </el-form-item>
                 <el-form-item>
-                    <el-button type="primary" @click="submitForm">生成</el-button>
-                    <el-button @click="copyForm">复制</el-button>
+                    <el-button type="primary" @click="submitForm">GET</el-button>
+                    <el-button @click="copyForm">COPY</el-button>
                 </el-form-item>
             </el-form>
         </el-card>
-        <div class="footer">
-            <div>
-                <span>
-                    <i class="fa fa-link" aria-hidden="true"></i>
-                    API 后端项目:
-                </span>
-                <span>
-                    <a href="https://github.com/SubConv/SubConv" target="_blank">
-                        SubConv
-                    </a>
-                </span>
-            </div>
-            <div>
-                <span>
-                    <i class="fa fa-pencil" aria-hidden="true"></i>
-                    UI designed by
-                </span>
-                <span>
-                    <a href="https://github.com/musanico" target="_blank">@Musanico</a>
-                </span>
-            </div>
-        </div>
     </div>
 </template>
 
@@ -124,7 +91,7 @@ const submitForm = () => {
 const copyForm = () => {
     navigator.clipboard.writeText(linkOutput.value);
     ElMessage({
-        message: '复制成功',
+        message: 'OK',
         type: 'success'
     })
 }
